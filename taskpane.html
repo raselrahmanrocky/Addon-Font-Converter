@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <title>বাংলা ফন্ট কনভার্টার</title>
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+    <script src="taskpane.js" type="text/javascript"></script>
+    <style>
+        body { font-family: sans-serif; padding: 15px; text-align: center; background-color: #f4f7f6; }
+        h1 { font-size: 1.2rem; color: #3f51b5; margin-bottom: 20px; }
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        #btnUnicodeToBijoy { 
+            background-color: #10B981; 
+            color: white; 
+            gap: 10px;
+        }
+        #btnBijoyToUnicode { 
+            background-color: #3B82F6; 
+            color: white; 
+            gap: 10px;
+        }
+        button:hover { 
+            transform: translateY(-2px); 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        #message {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            min-height: 20px;
+        }
+        .icon { width: 20px; height: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Word ফন্ট রূপান্তরকারী</h1>
+    <button id="btnUnicodeToBijoy" disabled>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 11V8a5 5 0 0 1 5-5h3"/><path d="M21 16v3a5 5 0 0 1-5 5h-3"/><path d="M3 13v3a5 5 0 0 0 5 5h3"/></svg>
+        <span>ইউনিকোড → বিজয় (SUTONNYMJ)</span>
+    </button>
+    <button id="btnBijoyToUnicode" disabled>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 3h5v5"/><path d="M4 11V8a5 5 0 0 1 5-5h3"/><path d="M21 16v3a5 5 0 0 1-5 5h-3"/><path d="M3 13v3a5 5 0 0 0 5 5h3"/></svg>
+        <span>বিজয় (SUTONNYMJ) → ইউনিকোড</span>
+    </button>
+    <button id="btnFixBijoy" disabled>
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z"/></svg>
+    <span>ভাঙ্গা বিজয় ফিক্স করুন</span>
+</button>
+    <p id="message"></p>
+</body>
+</html>
